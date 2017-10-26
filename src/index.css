@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.header {
+  z-index: 99999;
+  width: 100%;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: grey;
+  color: white;
+  position: fixed;
+}
+
+h3 {
+  height: 28px;
+  margin-top: 0px;
+  margin-left: 35px;
+  width: 310px;
+}
+
+.img-git {
+  width: 100%;
+}
+
+.img-git img {
+  float: right;
+  height: 100px;
+}
+
+.element {
+  width: 474px;
+  margin-top: 50px;
+  border-bottom: 6px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  margin-top: 75px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.info {
+  height: 164px;
+  margin-left: 6px;
+  width: 620px;
+}
+
+.tec-info {
+  margin-top: 15px;
+  float: right;
+  right: 42px;
+}
