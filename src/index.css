@@ -2,25 +2,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: transparent;
 }
 
 .header {
+  margin: 0;
   z-index: 99999;
   width: 100%;
   top: 0px;
   display: flex;
   align-items: center;
   height: 70px;
-  background-color: grey;
+  background: rgba(101, 175, 80, 0.9);
   color: white;
   position: fixed;
+box-shadow: 0px 7px 16px #888888;
 }
 
 h3 {
   height: 28px;
   margin-top: 0px;
   margin-left: 35px;
-  width: 310px;
+  width: 400px;
 }
 
 .img-git {
@@ -33,15 +36,14 @@ h3 {
 }
 
 .element {
-  width: 474px;
   margin-top: 50px;
-  border-bottom: 6px solid red;
+  border-bottom: 6px solid #f8f5f5;
   display: flex;
   justify-content: space-between;
 }
 
-.container {
-  margin-top: 75px;
+.main-container {
+  margin-top: 90px;
   margin-right: 40px;
   margin-left: 40px;
 }
@@ -52,8 +54,26 @@ h3 {
   width: 620px;
 }
 
+.tec-info-parent {
+  width: 238px;
+  height: 121px;
+  border: 0px solid black;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #888888;
+}
+
 .tec-info {
-  margin-top: 15px;
-  float: right;
-  right: 42px;
+  margin-top: 7px;
+  /* float: right; */
+  right: -25px;
+}
+
+.card-container {
+  max-width: 45%;
+  margin: 10px;
+  display: inline-flex;
+}
+
+.card-container h3 {
+  width: 600px;
 }
