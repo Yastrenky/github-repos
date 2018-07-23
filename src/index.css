@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: transparent;
+  background-image: url('./img/illusion.png')
 }
 
 .header {
@@ -16,7 +17,7 @@ body {
   background: rgba(101, 175, 80, 0.9);
   color: white;
   position: fixed;
-box-shadow: 0px 7px 16px #888888;
+  box-shadow: 0px 7px 16px #888888;
 }
 
 h3 {
@@ -26,9 +27,7 @@ h3 {
   width: 400px;
 }
 
-.img-git {
-  width: 100%;
-}
+.img-git {}
 
 .img-git img {
   float: right;
@@ -59,7 +58,7 @@ h3 {
   height: 121px;
   border: 0px solid black;
   border-radius: 5px;
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 4px 6px 11px #88888833;
 }
 
 .tec-info {
@@ -76,4 +75,12 @@ h3 {
 
 .card-container h3 {
   width: 600px;
+}
+
+.card-info {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
 }
