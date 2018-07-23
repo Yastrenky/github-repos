@@ -19,16 +19,24 @@ body {
   position: fixed;
   box-shadow: 0px 7px 16px #888888;
   justify-content: space-between;
+  font-family: 'Poor Story', cursive;
+}
+
+.header h3 {
+  flex: 1;
+  font-size: 40px;
+  text-align: center;
 }
 
 h3 {
   height: 28px;
   margin-top: 0px;
-  margin-left: 35px;
   width: 400px;
 }
 
-.img-git {}
+.img-git {
+  flex: 1;
+}
 
 .img-git img {
   float: right;
@@ -84,4 +92,11 @@ h3 {
   flex-direction: column;
   justify-content: space-around;
   color: white;
+}
+
+.card-index {
+  font-size: 40px;
+  color: white;
+  font-family: 'Poor Story', cursive;
+  font-family: 'Coda Caption', sans-serif;
 }

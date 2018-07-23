@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import url from '../../constants';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faLaptop } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+library.add(faLaptop);
 // import reposSaples from '../../constants/testobjet';
 const imgGithub = 'https://www.aha.io/assets/github.7433692cabbfa132f34adb034e7909fa.png';
 
@@ -29,9 +34,9 @@ function format_date(dat) {
 function GithubMap({ list }) {
   return (
     <div className='main-container highlight'>
-      {list.items.map(item => (
+      {list.items.map( (item, index) => (
         <span key={item.id} className='element'>
-          <span><Card data={item} /></span>
+          <span><Card data={item} index={index+1} /></span>
 
         </span>
       ))}
@@ -64,12 +69,13 @@ function ReposList({ data }) {
     </div>
   )
 }
-function Card({ data }) {
+function Card({ data , index}) {
   return (
     <div className='card-container'>
+      <span className="card-index">#{index}</span>
       <span><img style={{ height: 180, margin: 10 }} src={data.owner.avatar_url} alt="" /></span>
       <span className="card-info">
-        <h3>Name:<a href={data.owner.html_url}>{data.full_name}</a></h3>
+        <h3>Name: <a href={data.owner.html_url}>{data.full_name}</a></h3>
         <div>Owner: {data.owner.login}</div>
         <div>Description: {data.description}</div>
         <div>Acces: {data.private ? 'Private' : 'Public'}</div>
@@ -115,14 +121,14 @@ class App extends Component {
       return null
     }
     else {
-      console.log(data.items[0])
+      // console.log(data.items[0])
     }
 
 
     return (
       <div>
         <div className='header navbar navbar-default'>
-          <h3>Most Popular GitHub Repos</h3>
+          <h3><FontAwesomeIcon icon="laptop"/>  Most Popular Android GitHub Repos</h3>
           <span className='img-git '>
             <img alt='' src={imgGithub} />
           </span>
