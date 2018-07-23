@@ -13,7 +13,6 @@ body {
   top: 0px;
   display: flex;
   align-items: center;
-  height: 70px;
   background: rgba(101, 175, 80, 0.9);
   color: white;
   position: fixed;
@@ -29,7 +28,6 @@ body {
 }
 
 h3 {
-  height: 28px;
   margin-top: 0px;
   width: 400px;
 }
@@ -40,7 +38,7 @@ h3 {
 
 .img-git img {
   float: right;
-  height: 100px;
+  height: 70px;
 }
 
 .element {
@@ -54,6 +52,10 @@ h3 {
   margin-top: 90px;
   margin-right: 40px;
   margin-left: 40px;
+}
+
+.container {
+  transition: all .1s ease;
 }
 
 .info {

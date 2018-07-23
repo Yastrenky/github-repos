@@ -1,5 +1,6 @@
 {
-  "name": "ebay-finder",
+  "name": "github-repos",
+  "author": "Yastrenky Bravo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
