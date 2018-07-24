@@ -15,7 +15,7 @@ const imgGithub = 'https://www.aha.io/assets/github.7433692cabbfa132f34adb034e79
 function GithubMap({ list }) {
   return (
     <div className='main-container highlight'>
-      {list.items.map((item, index) => (
+      {list.map((item, index) => (
         <span key={item.id} className='element'>
           <span><Card data={item} index={index + 1} /></span>
 
@@ -38,10 +38,45 @@ class App extends Component {
     super(props);
 
     this.state = {
+      search: "",
+      searchedData: [],
       data: null,
       urlrepo: []
     }
     this.fetchSearchTopStories = this.fetchSearchTopStories.bind(this);
+    this.onSearch = this.onSearch.bind(this);
+  }
+
+  onSearch(e) {
+
+
+    var value = e.target.value;
+
+    if (value.length > 0) {
+
+
+
+
+      this.setState({
+        search: value,
+        searchedData: this.searchEngine(this.state.data, value)
+      })
+    }
+    else {
+      this.setState({ search: value, searchedData: [] })
+    }
+
+
+  }
+
+  searchEngine(arr, value) {
+    var items = [];
+    arr.items.forEach(item => {
+      if (item.name.includes(value)) {
+        items.push(item)
+      }
+    })
+    return items
   }
 
   fetchSearchTopStories(searchTerm) {
@@ -60,10 +95,18 @@ class App extends Component {
   }
 
   render() {
-    const { classes } = this.props;
-    const data = this.state.data;
-    if (!data) return null;
+    //to delete after testing
+    console.log(this.state);
 
+    const { classes } = this.props;
+    var data = this.state.data;
+
+    if (data) {
+      data = this.state.searchedData.length > 0 ? this.state.searchedData : this.state.data.items;
+    }
+    else {
+      return null;
+    }
     return (
       <div>
         <div className='header navbar navbar-default'>
@@ -72,11 +115,13 @@ class App extends Component {
 
           <span className="search-box">
             <TextField
+              fullWidth={true}
               id="name"
-              label="Name"
+              label="Search"
+              heigth="1px"
               className={classes.textField}
-              value={this.state.name}
-              // onChange={this.handleChange('name')}
+              value={this.state.search}
+              onChange={this.onSearch}
               margin="normal"
             />
           </span>
@@ -87,6 +132,7 @@ class App extends Component {
 
         </div>
         <GithubMap list={data} />
+
       </div>
     )
   }
