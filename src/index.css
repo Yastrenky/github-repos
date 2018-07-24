@@ -54,10 +54,6 @@ h3 {
   margin-left: 40px;
 }
 
-.container {
-  transition: all .1s ease;
-}
-
 .info {
   height: 164px;
   margin-left: 6px;
@@ -65,8 +61,11 @@ h3 {
 }
 
 .tec-info-parent {
+  padding-bottom: 10px;
+  margin-left: 40px;
   width: 238px;
-  height: 145px;
+  transition: all .1s ease;
+  animation: freak-out 1s steps(300);
   border: 0px solid black;
   border-radius: 5px;
   box-shadow: 4px 6px 11px #88888833;
@@ -101,4 +100,57 @@ h3 {
   color: white;
   font-family: 'Poor Story', cursive;
   font-family: 'Coda Caption', sans-serif;
+}
+
+@keyframes freak-out {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    height: 145px;
+  }
+}
+
+.list-more {
+  width: 374px;
+}
+
+.list-group {
+  transition: all .0, 5s ease;
+  animation: freak-out 0, 5s steps(200);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  padding-top: 40px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid black;
+  background: black;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 10px;
+  width: 5px;
+  border: 1px solid black;
+  background: black;
+  -webkit-box-shadow: 0 1px 1px rgb(0, 0, 0);
+  background: -webkit-linear-gradient(rgb(200, 200, 200), rgb(150, 150, 150));
+}
+
+::-webkit-scrollbar-track-piece {
+  height: 10px;
+}
+
+.search-box {
+  flex: 1;
 }

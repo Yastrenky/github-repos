@@ -23,7 +23,7 @@ class ReposList extends React.Component {
         <button type="button" className={style} onClick={this.onClick}> {view ? "Hide" : "Show"}</button>
 
         {this.state.show ?
-          <div id={"demo" + this.props.data.id} style={{ width: '374px' }}>
+          <div className ="list-more">
             <div className="list-group" style={{ marginTop: 10 }}>
               <span ><TechnicalInfo data={this.props.data} /></span>
             </div>
