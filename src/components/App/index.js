@@ -26,6 +26,11 @@ function GithubMap({ list }) {
 }
 
 const styles = theme => ({
+
+  textField: {
+    fontSize: 50,
+    lineHeight: 5
+  },
   root: {
     textAlign: 'center',
     paddingTop: theme.spacing.unit * 20,
@@ -48,10 +53,7 @@ class App extends Component {
   }
 
   onSearch(e) {
-
-
     var value = e.target.value;
-
     if (value.length > 0) {
       this.setState({
         search: value,
@@ -61,19 +63,15 @@ class App extends Component {
     else {
       this.setState({ search: value, searchedData: [] })
     }
-
-
   }
 
   searchEngine(arr, value) {
     var items = [];
     arr.items.forEach(item => {
-      // console.log(item.name);
       if (item.full_name.toLowerCase().includes(value) || item.description.toLowerCase().includes(value)) {
         items.push(item)
       }
     })
-    // console.log(items.length)
     return items
   }
 
@@ -94,13 +92,14 @@ class App extends Component {
 
   render() {
     //to delete after testing
-    // console.log(this.state);
+   
 
     const { classes } = this.props;
     var data = this.state.data;
 
     if (data) {
       data = this.state.searchedData.length > 0 ? this.state.searchedData : this.state.data.items;
+      console.log(this.state.data.items[0]);
     }
     else {
       return null;
@@ -119,7 +118,7 @@ class App extends Component {
               value={this.state.search}
               onChange={this.onSearch}
               margin="normal"
-              style={{ color: "white" }}
+              fontSize= "10"
             />
             <div>Results: {data.length}</div>
           </span>

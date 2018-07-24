@@ -13,6 +13,7 @@ const Card = ({ data, index }) => {
         <div>Description: {data.description}</div>
         <div>Acces: {data.private ? 'Private' : 'Public'}</div>
         <div>Type: {data.owner.type}</div>
+        <div>Language: {data.language}</div>
         <ReposList data={data} />
       </span>
     </div>
