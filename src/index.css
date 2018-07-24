@@ -25,6 +25,7 @@ body {
   flex: 1;
   font-size: 40px;
   text-align: center;
+  margin:5px;
 }
 
 h3 {
@@ -49,7 +50,7 @@ h3 {
 }
 
 .main-container {
-  margin-top: 90px;
+  margin-top: 100px;
   margin-right: 40px;
   margin-left: 40px;
 }
@@ -107,8 +108,9 @@ h3 {
     opacity: 0;
     height: 0px;
   }
-  70% {
-    opacity: 0.2;
+  20% {
+    opacity: 0.4;
+    height: 145px;
   }
   100% {
     opacity: 1;
@@ -121,8 +123,7 @@ h3 {
 }
 
 .list-group {
-  transition: all .0, 5s ease;
-  animation: freak-out 0, 5s steps(200);
+  animation: freak-out 0.5s steps(200);
 }
 
 ::-webkit-scrollbar {

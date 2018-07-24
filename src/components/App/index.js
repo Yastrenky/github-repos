@@ -53,10 +53,6 @@ class App extends Component {
     var value = e.target.value;
 
     if (value.length > 0) {
-
-
-
-
       this.setState({
         search: value,
         searchedData: this.searchEngine(this.state.data, value)
@@ -72,10 +68,12 @@ class App extends Component {
   searchEngine(arr, value) {
     var items = [];
     arr.items.forEach(item => {
-      if (item.name.includes(value)) {
+      // console.log(item.name);
+      if (item.full_name.toLowerCase().includes(value) || item.description.toLowerCase().includes(value)) {
         items.push(item)
       }
     })
+    // console.log(items.length)
     return items
   }
 
@@ -96,7 +94,7 @@ class App extends Component {
 
   render() {
     //to delete after testing
-    console.log(this.state);
+    // console.log(this.state);
 
     const { classes } = this.props;
     var data = this.state.data;
@@ -110,9 +108,7 @@ class App extends Component {
     return (
       <div>
         <div className='header navbar navbar-default'>
-
           <h3><FontAwesomeIcon icon="laptop" />  Most Popular Android GitHub Repos</h3>
-
           <span className="search-box">
             <TextField
               fullWidth={true}
@@ -123,9 +119,10 @@ class App extends Component {
               value={this.state.search}
               onChange={this.onSearch}
               margin="normal"
+              style={{ color: "white" }}
             />
+            <div>Results: {data.length}</div>
           </span>
-
           <span className='img-git '>
             <img alt='' src={imgGithub} />
           </span>
